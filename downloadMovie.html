@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <style>
+      img:hover {
+        opacity: 0.8;
+        border-color: #3cca35;
+      }
+      .keyUpMovies:hover {
+        background-color: rgb(12, 243, 12);
+      }
+    </style>
+    <title>download movie</title>
+  </head>
+  <nav class="navbar navbar-expand-lg" style="background-color:#1D1D1D">
+    <a href="index.html" style="text-decoration:none">
+      <!--
+        <img
+          class="navbar-brand"
+          src="https://yts.am/assets/images/website/logo-YTS.svg"
+          alt="YIFY"
+        />
+      -->
+      <div class="container"><h1 class="text-success">𝕳𝖘𝕸𝖔𝖛𝖎𝖊𝖘</h1></div>
+    </a>
+    <button
+      class="navbar-toggler bg-success"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon mt-2">
+        <i class="fas fa-bars"></i>
+      </span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <form
+          class="form-inline my-2 my-lg-0"
+          id="searchform"
+          autocomplete="off"
+        >
+          <input
+            class="form-control mr-sm-2 "
+            id="searchMovies"
+            type="search"
+            placeholder="Search Movie"
+            aria-label="Search"
+            autocomplete="off"
+          />
+          <button
+            class="btn btn-outline-success my-2 my-sm-0 text-success searchButton"
+            id="searchButton"
+            type="submit"
+          >
+            <strong> Search </strong>
+          </button>
+        </form>
+        <li class="nav-item active">
+          <a class="nav-link text-secondary" href="index.html">
+            <strong>Home</strong> <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="browseMovie.html"
+            ><strong>Browse Movies</strong></a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#"><strong>Log in</strong></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div
+    class="col-sm-2 d-sm-block d-md-block"
+    style="left: 720.672px;position: absolute;display: block;overflow: hidden;z-index: 10"
+    id="keyupMoviesSuggestion"
+  ></div>
+  <body
+    id="bodyOfDownLoadMovies"
+    style="background-size:100%;background-repeat: no-repeat;background-color:black"
+  >
+    <div
+      class="container-fluid"
+      id="mainDivForDownloadMovies"
+      style="background-color:rgba(0,0,0,0.5)"
+    >
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="mt-4" id="containerDivforDownloadMovies"></div>
+        </div>
+        <div class="col-sm-4">
+          <div
+            class="containerForMovieSuggestions"
+            id="containerForMovieSuggestions"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="container-fluid"
+      id="movieTrailer"
+      style="background-color:black"
+    ></div>
+    <div
+      class="containerCast container-fluid"
+      id="containerCast"
+      style="background-color:black"
+    ></div>
+
+    <script src="api.js"></script>
+    <script src="yts_ui.js"></script>
+    <script src="downloadMovie.js"></script>
+  </body>
+</html>
