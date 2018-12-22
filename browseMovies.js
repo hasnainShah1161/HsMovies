@@ -13,7 +13,7 @@ const rating = document.getElementById("rating");
 const browseMoviesContainer = document.getElementById("browseMovies");
 uiObject.browseNextPageMovies();
 //displaying movies on the browseMovies home page
-browseMoviesApiObj.gettingDataForHomePage(3).then(response => {
+browseMoviesApiObj.gettingDataForHomePage().then(response => {
   //storing the array of images in the variable array
   const arrayOfMovies = response.yts_home_response.data.movies;
   console.log(response);

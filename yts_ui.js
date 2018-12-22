@@ -17,6 +17,7 @@ class yts_ui {
     this.keyupMoviesSuggestionContainer = document.getElementById(
       "keyupMoviesSuggestion"
     );
+    this.themoviedbcontainer = document.getElementById("themoviedbcontainer");
   }
   keyupMoviesSuggestion(keyupMovies) {
     this.keyupMoviesSuggestionContainer.innerHTML += `
@@ -24,7 +25,7 @@ class yts_ui {
      <div class="row" style="background-color:rgba(0,0,0,0.5)" id="row">
      <a href="downloadMovie.html?${keyupMovies.title_english}=${
       keyupMovies.id
-    }" target="_blank" id="movie_id" style="text-decoration:none">
+    }"  id="movie_id" style="text-decoration:none">
     <table>
     <tr>
     <td>
@@ -63,52 +64,56 @@ class yts_ui {
 
   //displaying movies on the homePage
   displayMoviesOnHomePage(displayHomePageMovies) {
-    // const selectedMovie = displayHomePageMovies.id;
-    this.moviesContainer.innerHTML += `<div class="container">
-   <div class="col-sm-3" style="float:left;">
-   <div class="col-sm-12">
-   <a href="downloadMovie.html?${displayHomePageMovies.title_english}=${
-      displayHomePageMovies.id
-    }" target="_blank" style="text-decoration:none">
+    this.moviesContainer.innerHTML += `     
     <div class="container">
-    <div class="figCaption" id="figCaption">
- <img class="img-fluid mt-2 mb-2" style="border-style:groove;height:auto max-width:100%;border-width:7px;
- " src="${displayHomePageMovies.large_cover_image}" title="${
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs1-8 col-xs-12 float-left">
+      <a href="downloadMovie.html?${displayHomePageMovies.title_english}=${
+      displayHomePageMovies.id
+    }"  style="text-decoration:none"  title="${
       displayHomePageMovies.title_english
     }">
- </img>
- </div> 
- <h6 class="text-light">${displayHomePageMovies.title_english.slice(0, 20)}</h6>
-<p class="text-light">${displayHomePageMovies.year} </p>  
-</div>
-</a> 
-   </div>
-   </div> 
-    </div>`;
-    const figCaption = document.getElementById("figCaption");
+        <div class="poster-image border">
+          <img
+            src="${displayHomePageMovies.large_cover_image}"
+            style="width:100%;height:300px;border-style:solid;border-width:5px;"
+          />
+        </div>
+            <h6 class="text-light">${displayHomePageMovies.title_english.slice(
+              0,
+              20
+            )}</h6>
+           <p class="text-light">${displayHomePageMovies.year} </p>
+           </a>
+      </div>
+      </div>
+
+    `;
   }
   //displaying movies on the page of browse movies before submition
   displayMoviesONBrowseHomePage(displayHomePageMovies) {
-    this.browseMovies.innerHTML += `<div class="container mt-4">
-    
-   <div class="col-sm-3 float-left">
-   <div class="col-sm-12">
-   <a href="downloadMovie.html?${displayHomePageMovies.title_english}=${
+    this.browseMovies.innerHTML += `
+    <div class="container">
+      <div class="col-sm-3 mb-3 float-left">
+      <a href="downloadMovie.html?${displayHomePageMovies.title_english}=${
       displayHomePageMovies.id
-    }" target="_blank" id="movie_id" style="text-decoration:none">   <img class="img-fluid mt-2 mb-2" style="border-style:groove;height:auto max-width:100%;border-width:7px" src="${
-      displayHomePageMovies.large_cover_image
-    }" title="${displayHomePageMovies.title_english}">
-   </img> 
-   <h6 class="text-light">${displayHomePageMovies.title_english.slice(
-     0,
-     20
-   )}..</h6>
-   <span class="text-light">${displayHomePageMovies.year}</span>
-   </a>
-   </div>
-
-   </div> 
-    </div>`;
+    }"  style="text-decoration:none"  title="${
+      displayHomePageMovies.title_english
+    }">
+        <div class="poster-image border">
+          <img
+            src="${displayHomePageMovies.large_cover_image}"
+            style="width:100%;height:300px;border-style:solid;border-width:5px;"
+          />
+        </div>
+            <h6 class="text-light">${displayHomePageMovies.title_english.slice(
+              0,
+              20
+            )}</h6>
+           <p class="text-light">${displayHomePageMovies.year} </p>
+           </a>
+      </div>
+      </div>
+    `;
   }
 
   //browsing next page movies on the browse movies page
@@ -156,47 +161,53 @@ class yts_ui {
   //display the movies after submitting the form1
   displayMovies(displayMovieImage) {
     this.moviesContainer.innerHTML += `
-    <div class"container mt-4">
-     <div class ="col-sm-3" style="float:left">
-     <div class="col-sm-12">
-     <a href="downloadMovie.html?${displayMovieImage.title_english}=${
+    <div class="container">
+      <div class="col-sm-3 mb-3 float-left">
+      <a href="downloadMovie.html?${displayMovieImage.title_english}=${
       displayMovieImage.id
-    }" target="_blank" id="movie_id" style="text-decoration:none">
-     <img class="img-fluid mt-2 mb-2" style="border-style:groove;height:auto max-width:100%;border-width:7px;" src="${
-       displayMovieImage.large_cover_image
-     }" style="border-radius:10px;border-style:groove;height:auto max-width:100%;border-color:white" title="${
+    }"  style="text-decoration:none"  title="${
       displayMovieImage.title_english
     }">
-    <h6 class="text-light">${displayMovieImage.title_english}</h6>
-    <h6 class="text-light">${displayMovieImage.year}</h6>
-     </a>
-     
-     </div>
-
-     </div>
-     </div>
+        <div class="poster-image border">
+          <img
+            src="${displayMovieImage.large_cover_image}"
+            style="width:100%;height:300px;border-style:solid;border-width:5px;"
+          />
+        </div>
+            <h6 class="text-light">${displayMovieImage.title_english.slice(
+              0,
+              20
+            )}</h6>
+           <p class="text-light">${displayMovieImage.year} </p>
+           </a>
+      </div>
+      </div>
      `;
   }
   //display/browse the movies after submitting the form2
   displayBrowsedMovies(displayBrowsedMovies) {
-    this.browseMovies.innerHTML += `<div class="container mt-5">
-        
-       <div class="col-sm-3" style="float:left;">
-       <div class="col-sm-12">
-       <a href="downloadMovie.html?${displayBrowsedMovies.title_english}=${
+    this.browseMovies.innerHTML += `
+    <div class="container">
+    <div class="col-sm-3 mb-3 float-left">
+    <a href="downloadMovie.html?${displayBrowsedMovies.title_english}=${
       displayBrowsedMovies.id
-    }" target="_blank" id="movie_id">       <img class="img-fluid mt-2 mb-2" style="border-style:groove;height:auto max-width:100%;border-width:7px;" src="${
-      displayBrowsedMovies.large_cover_image
-    }" title="${displayBrowsedMovies.title_english}">
-       </img> </a>
-       <h6 class="text-light">${displayBrowsedMovies.title_english.slice(
-         0,
-         20
-       )}</h6>
-       <span class="text-light">${displayBrowsedMovies.year}</span>
-       </div>
-        </div>
-        </div>
+    }"  style="text-decoration:none"  title="${
+      displayBrowsedMovies.title_english
+    }">
+      <div class="poster-image border">
+        <img
+          src="${displayBrowsedMovies.large_cover_image}"
+          style="width:100%;height:300px;border-style:solid;border-width:5px;"
+        />
+      </div>
+          <h6 class="text-light">${displayBrowsedMovies.title_english.slice(
+            0,
+            20
+          )}</h6>
+         <p class="text-light">${displayBrowsedMovies.year} </p>
+         </a>
+    </div>
+    </div>
         `;
   }
   //displaying movie details when click for downloading
@@ -207,11 +218,11 @@ class yts_ui {
     this.containerDivforDownloadMovies.innerHTML = `
     <div class="mt-4 container">
     <div class="row">
-     <div class ="col-sm-4" style="float:left">
-     <div class="col-sm-12" style="">
+     <div class ="col-sm-4">
+     <div class="col-sm-12">
      <img class ="img-fluid  mt-2 mb-2" src="${
        displayMovieDetails.large_cover_image
-     }" style="border-radius:10px;border-style:groove;height:auto max-width:100%" title="${
+     }" style="border-radius:10px;border-style:solid; max-width:100%" title="${
       displayMovieDetails.title_english
     }">
      </div>
@@ -340,7 +351,7 @@ class yts_ui {
     <div class ="col-sm-4">
     <a href="downloadMovie.html?${movieSuggestionImages.title_english}=${
         movieSuggestionImages.id
-      }" target="_blank" id="movie_id">
+      }"  id="movie_id">
      <img class="img-fluid mt-2 mb-2" style="border-style:groove;height:auto max-width:100%;border-width:7px;" src="${
        movieSuggestionImages.medium_cover_image
      }" style="border-radius:10px;border-style:groove;height:auto max-width:100%" title="${
@@ -372,7 +383,7 @@ class yts_ui {
     </div>
     </div>
     <div class="mb-5 mt-5">
-    <iframe class="col-sm-12" style="height:500px" src="https://www.youtube.com/embed/${
+    <iframe allowfullscreen class="col-sm-12" style="height:500px" src="https://www.youtube.com/embed/${
       movieTrailer.yt_trailer_code
     }?rel=0&wmode=transparent&border=0&autoplay=1&iv_load_policy=3" id="ytVideo">
     </iframe>
@@ -433,7 +444,7 @@ class yts_ui {
     <div class ="col-sm-2 mb-4" style="float:left">
     <a href="downloadMovie.html?${browseMoviesForm1.title_english}=${
       browseMoviesForm1.id
-    }" target="_blank" id="movie_id" style="text-decoration:none">
+    }"  id="movie_id" style="text-decoration:none">
     <img class ="img-fluid mt-2 mb-2" src="${
       browseMoviesForm1.large_cover_image
     }" style="border-style:groove;height:auto max-width:100%;border-width:7px;" title="${
@@ -455,7 +466,7 @@ class yts_ui {
     <div class ="col-sm-3" style="float:left">
     <a href="downloadMovie.html?${downloadMoviesForm1.title_english}=${
       downloadMoviesForm1.id
-    }" target="_blank" id="movie_id" style="text-decoration:none">
+    }"  id="movie_id" style="text-decoration:none">
     <img class ="img-fluid mt-2 mb-2" src="${
       downloadMoviesForm1.large_cover_image
     }"style="border-style:groove;height:auto max-width:100%;border-width:7px;" title="${
@@ -468,6 +479,45 @@ class yts_ui {
 
     </div>
     </div>
+    `;
+  }
+  //movies details from the themovieDB api
+  theMovieDBdetails(movieDbdetails) {
+    this.themoviedbcontainer.innerHTML += `
+    <div class="container">
+    <div class="row">
+      <div class="col-sm-3 mb-3 float-left">
+      
+        <div class="poster-image border">
+          <img
+            src="https://image.tmdb.org/t/p/w185${movieDbdetails.poster_path}"
+            style="width:100%;height:300px;border-style:solid;border-width:5px;"
+          />
+        </div>
+        <a href="https://www.themoviedb.org/movie/${
+          movieDbdetails.id
+        }"  style="text-decoration:none"  title="">
+      <button class="btn btn-block btn-success mt-2 mb-2">View Details</button>
+           </a>
+      </div>
+      <div class="col-sm-6">
+      
+      <h6 class="text-light">${movieDbdetails.title}</h6>
+      
+      <p class="text-secondary">${movieDbdetails.overview} </p>
+      
+      <p class="badge bg-warning">Release Date : ${
+        movieDbdetails.release_date
+      }</p>
+      </br>
+      
+      <p class="badge bg-warning">language : ${
+        movieDbdetails.original_language
+      }</p>
+      
+      </div>
+      </div>
+      </div>
     `;
   }
 
@@ -500,3 +550,49 @@ class yts_ui {
     }, 3000);
   }
 }
+
+//display movies on home page before searching
+
+// <div class="container">
+//     <div class="row">
+//    <div class="col-lg-3 col-sm-6" >
+//    <div class="poster-image border" style="float-right">
+//  <img class="img-fluid mt-2 mb-2" style="width:100%;height:300px;"
+//  " src="${displayHomePageMovies.large_cover_image}" title="${
+//       displayHomePageMovies.title_english
+//     }">
+//  </img>
+//  </div>
+//    <a href="downloadMovie.html?${displayHomePageMovies.title_english}=${
+//       displayHomePageMovies.id
+//     }"  style="text-decoration:none">
+
+//  <h6 class="text-light">${displayHomePageMovies.title_english.slice(0, 20)}</h6>
+// <p class="text-light">${displayHomePageMovies.year} </p>
+// </a>
+//    </div>
+//    </div>
+//     </div>
+
+//display movies on browse home page
+
+// <div class="container mt-4">
+
+//     <div class="col-sm-3 float-left">
+//     <div class="col-sm-12">
+//     <a href="downloadMovie.html?${displayHomePageMovies.title_english}=${
+//        displayHomePageMovies.id
+//      }"  id="movie_id" style="text-decoration:none">   <img class="img-fluid mt-2 mb-2" style="border-style:groove;height:auto max-width:100%;border-width:7px" src="${
+//        displayHomePageMovies.large_cover_image
+//      }" title="${displayHomePageMovies.title_english}">
+//     </img>
+//     <h6 class="text-light">${displayHomePageMovies.title_english.slice(
+//       0,
+//       20
+//     )}..</h6>
+//     <span class="text-light">${displayHomePageMovies.year}</span>
+//     </a>
+//     </div>
+
+//     </div>
+//      </div>

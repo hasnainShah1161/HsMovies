@@ -51,4 +51,13 @@ class YtsApi {
       movieSuggestionResponse
     };
   }
+  async themovieDBapi(search) {
+    const theMovieDb = await fetch(
+      `http://api.themoviedb.org/3/search/movie?api_key=4d9e8a9d1b27819b3ef91fed93481b42&query=${search}&video=true`
+    );
+    const theMovieDbresponse = await theMovieDb.json();
+    return {
+      theMovieDbresponse
+    };
+  }
 }

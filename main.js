@@ -16,16 +16,26 @@ const searchForm = document.getElementById("searchform");
 //creating the variable for the movies container
 const moviesContainer = document.getElementById("moviesDiv");
 let keyupInputvalue = document.getElementById("searchMovies");
+const keyUpmoviesSuggestionDiv = document.getElementById(
+  "keyupMoviesSuggestion"
+);
+
 keyupInputvalue.addEventListener("keyup", e => {
-  if (document.getElementById("searchMovies").value !== "") {
-    document.getElementById("keyupMoviesSuggestion").innerHTML = "";
-    apiObject.gettingDataFromYts(keyupInputvalue.value).then(response =>
-      response.yts_response.data.movies.slice(0, 4).map(result => {
-        uiObject.keyupMoviesSuggestion(result);
-      })
-    );
-  } else if (document.getElementById("searchMovies").value !== "") {
-    document.getElementById("keyupMoviesSuggestion").innerHTML = "";
+  if (keyupInputvalue.value !== "") {
+    keyUpmoviesSuggestionDiv.innerHTML = "";
+    apiObject.gettingDataFromYts(keyupInputvalue.value).then(response => {
+      const moviesArray = response.yts_response.data.movies;
+      if (response.yts_response.data.movie_count === 0) {
+        console.log("zero result");
+        keyUpmoviesSuggestionDiv.innerHTML = "";
+      } else {
+        moviesArray.slice(0, 4).map(result => {
+          uiObject.keyupMoviesSuggestion(result);
+        });
+      }
+    });
+  } else if (keyupInputvalue.value === "") {
+    keyUpmoviesSuggestionDiv.innerHTML = "";
   }
 });
 
