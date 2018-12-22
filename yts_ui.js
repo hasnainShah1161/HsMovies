@@ -220,9 +220,9 @@ class yts_ui {
     <div class="row">
      <div class ="col-sm-4">
      <div class="col-sm-12">
-     <img class ="img-fluid  mt-2 mb-2" src="${
+     <img class ="img-fluid image-poster mt-2 mb-2" src="${
        displayMovieDetails.large_cover_image
-     }" style="border-radius:10px;border-style:solid; max-width:100%" title="${
+     }" style="border-radius:10px;border-style:solid;width:100%" title="${
       displayMovieDetails.title_english
     }">
      </div>
@@ -352,7 +352,7 @@ class yts_ui {
     <a href="downloadMovie.html?${movieSuggestionImages.title_english}=${
         movieSuggestionImages.id
       }"  id="movie_id">
-     <img class="img-fluid mt-2 mb-2" style="border-style:groove;height:auto max-width:100%;border-width:7px;" src="${
+     <img class="img-fluid mt-2 mb-2 poster-image " style="border-style:groove;height:auto;width:100%;height:170px;border-style:groove" src="${
        movieSuggestionImages.medium_cover_image
      }" style="border-radius:10px;border-style:groove;height:auto max-width:100%" title="${
         movieSuggestionImages.title_english
