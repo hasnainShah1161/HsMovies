@@ -352,7 +352,7 @@ class yts_ui {
     <a href="downloadMovie.html?${movieSuggestionImages.title_english}=${
         movieSuggestionImages.id
       }"  id="movie_id">
-     <img class="img-fluid mt-2 mb-2 poster-image " style="border-style:groove;height:auto;width:100%;height:170px;border-style:groove" src="${
+     <img class="img-fluid mt-2 mb-2 poster-image " style="border-style:groove;height:auto;width:100%;height:160px;border-style:groove" src="${
        movieSuggestionImages.medium_cover_image
      }" style="border-radius:10px;border-style:groove;height:auto max-width:100%" title="${
         movieSuggestionImages.title_english
